@@ -6,42 +6,65 @@
   <title>Mitchelle Obura — Software Developer</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet" />
-</head>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&amp;family=DM+Mono:wght@300;400&amp;display=swap" rel="stylesheet" />
+
 <body>
   <!-- Navigation -->
-  <nav class="nav" id="nav">
-    <div class="nav-logo">MO</div>
+    <nav>
+    <a href="#" class="logo">AXIS <span></span></a>
+
     <ul class="nav-links">
-      <li><a href="#work" data-text="Work">Home</a></li>
-      <li><a href="#about" data-text="About">About me</a></li>
-      <li><a href="#projects" data-text="About">Projects</a></li>
-      <li><a href="#contact" data-text="Contact">Contacts</a></li>
+      <li><a href="#home" class="active">Home</a></li>
+      <li><a href="#project">Work</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
-    <div class="nav-status">
-      <span class="status-dot"></span>
-      Available for work
+
+    <div class="nav-cta">
+      <a href="#" class="btn-cta">Get Started</a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
     </div>
   </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Mobile navigation">
+    <ul>
+      <li><a href="#home" class="active">Home</a></li>
+      <li><a href="#project">Work</a></li>
+      <li><a href="#about">About Me</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="mobile-divider"></div>
+    <a href="#" class="btn-cta">Get Started →</a>
+  </div>
   <!-- Hero -->
   <section class="hero" id="home">
    <div class="hero-content">
-     <div>
-       <h2 class="hero-eyebrow">
+     <div class="hero-words">
+       <h1 class="hero-eyebrow">
        <span class="line"></span>
-       <span>Mitchelle Obura</span>
+       <span>Portfolio</span>
+      </h1>
+     <div class="hero-title">
+        <h2 class="name">
+        It's me
       </h2>
-        <h3 class="hero-title">
-      <span class="title-line" data-delay="0">Full stack</span>
-      <span class="title-line italic" data-delay="100">Software</span>
-      <span class="title-line" data-delay="200">Developer</span>
+        <h3>
+      <span class="title-line" data-delay="0"> Mitchelle Obura</span>
+      <span class="title-line italic" data-delay="100"><br>Full stack</span>
+      <span class="title-line" data-delay="200">&nbsp;&nbsp;Developer</span>
       </h3>
+     </div>
       <div class="hero-meta">
-        <p class="hero-desc">Building performant web experiences from database to user interface.</p>
+        <p class="hero-desc">Building scalable web apps with React, Python, and AI smarts—turning data into dynamic experiences that scale and surprise.</p>
       </div>
-      <div className="btn-sci">
-       <a href="#projects"><button className='btn'>View Projects</button></a>
-       <a href="#contact"><button className='btn'>Contact Me</button></a>
+      <div class="hero-btn">
+       <a href=""><button>View Projects</button></a>
+       <a href="#contact"><button>Contact Me</button></a>
       </div>
     </div>
     <img src="/images/hero.png" alt="hero-image" class="hero-image"/>
@@ -51,7 +74,6 @@
   <div class="marquee-wrapper">
     <div class="marquee">
       <span>UI/UX Design</span><span class="dot">·</span>
-      <span>Web Development</span><span class="dot">·</span>
       <span>Database management</span><span class="dot">·</span>
       <span>API Development</span><span class="dot">·</span>
       <span>Virtualization</span><span class="dot">·</span>
@@ -199,15 +221,37 @@
     <div class="section-header">
       <h2 class="section-title">Get in Touch</h2>
     </div>
-    <div></div>
-    <div class="contact-inner">
-      <p class="contact-lead">Have a project in mind? <em>Let's talk.</em></p>
-      <p><img src="/images/phone.png"><a href="tel:+254759564714" class="contact-phone">+254759564714</a></p>
-     <p><img src="/images/email.png"><a href="mailto:oburamitchelle87@gmail.com" class="contact-email">oburamitchelle87@gmail.com</a></p>
-      <div class="contact-social">
-        <a href="#"><img src="/images/linkedin.svg"</a>
-        <a href="https://github.com/Oburamitchelle"><img src="/images/github.svg"</a>
-        <a href="https://www.instagram.com/mitc.hey4?igsh=MWw1eGlrMHNpNTk5aw=="><img src="/images/instagram.svg"</a>
+    <div class="contact-information">
+      <div class="contact-form">
+        <form>
+          <div class="form-inputs">
+            <div class="form-group">
+            <input type="text" placeholder="Your Name" required>
+           </div>
+          <div class="form-group">
+            <input type="email" placeholder="Your Email" required>
+          </div>
+           <div class="form-group">
+             <textarea placeholder="Your Message" rows="5"></textarea>
+           </div>
+          </div>
+           <button type="submit" class="form-btn">Submit</button>
+         </form>
+      </div>
+      <div class="contact-inner">
+      <div class="contact-lead">
+        <p>Have a project in mind? <em>Let's talk.</em></p>
+        <p><img src="/images/phone.png"><a href="tel:+254759564714" class="contact-phone">&nbsp;+254759564714</a></p>
+        <p><img src="/images/email.png"><a href="mailto:oburamitchelle87@gmail.com" class="contact-email">&nbsp;oburamitchelle87@gmail.com</a></p>
+      </div>
+       <div class="contact-social">
+        <p>Follow on social media for more information.</p>
+        <div class="social-links">
+          <a href="#"><img src="/images/linkedin.svg"></a>
+          <a href="https://github.com/Oburamitchelle"><img src="/images/github.svg"></a>
+          <a href="https://www.instagram.com/mitc.hey4?igsh=MWw1eGlrMHNpNTk5aw=="><img src="/images/instagram.svg"></a>
+        </div>
+      </div>
       </div>
     </div>
   </section>

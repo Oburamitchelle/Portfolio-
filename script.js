@@ -4,6 +4,26 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
+  // ─── Hamburger Mobile Menu ────────────────────────────────
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const mobileLinks = document.querySelectorAll('.mobile-link');
+
+  hamburger.addEventListener('click', () => {
+    const isOpen = mobileMenu.classList.toggle('open');
+    hamburger.classList.toggle('open', isOpen);
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  });
+
+  mobileLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      hamburger.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  });
+
+
   // ─── Custom Cursor ───────────────────────────────────────
   const cursor = document.getElementById('cursor');
   const trail = document.getElementById('cursorTrail');
