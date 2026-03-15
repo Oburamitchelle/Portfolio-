@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mitchelle Obura — Software Developer</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&amp;family=DM+Mono:wght@300;400&amp;display=swap" rel="stylesheet" />
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Syne:wght@400..800&display=swap" rel="stylesheet">
 <body>
   <!-- Navigation -->
     <nav>
-    <a href="#" class="logo">AXIS <span></span></a>
+    <p class="logo">MO</p>
 
     <ul class="nav-links">
       <li><a href="#home" class="active">Home</a></li>
@@ -21,7 +21,8 @@
     </ul>
 
     <div class="nav-cta">
-      <a href="#" class="btn-cta">Get Started</a>
+       <div class="nav-status"><span class="status-dot"></span><p>Available for work</p>
+       </div>
       <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
         <span class="bar"></span>
         <span class="bar"></span>
@@ -39,7 +40,9 @@
       <li><a href="#contact">Contact</a></li>
     </ul>
     <div class="mobile-divider"></div>
-    <a href="#" class="btn-cta">Get Started →</a>
+    <div class="mobile-status">
+      <span class="status-dot"></span> <p>Available for work</p>
+    </div>
   </div>
   <!-- Hero -->
   <section class="hero" id="home">
@@ -50,24 +53,27 @@
        <span>Portfolio</span>
       </h1>
      <div class="hero-title">
-        <h2 class="name">
-        It's me
+        <h2>
+      <span class="title-line italic" data-delay="0">It's me</span>
+      <span class="title-line" data-delay="100"><br>Mitchelle Obura</span>
+      <span class="title-line" data-delay="200"><br>Full stack Software<br>developer & Tech enthusiast</span>
       </h2>
-        <h3>
-      <span class="title-line" data-delay="0"> Mitchelle Obura</span>
-      <span class="title-line italic" data-delay="100"><br>Full stack</span>
-      <span class="title-line" data-delay="200">&nbsp;&nbsp;Developer</span>
-      </h3>
      </div>
       <div class="hero-meta">
         <p class="hero-desc">Building scalable web apps with React, Python, and AI smarts—turning data into dynamic experiences that scale and surprise.</p>
       </div>
       <div class="hero-btn">
-       <a href=""><button>View Projects</button></a>
-       <a href="#contact"><button>Contact Me</button></a>
+       <a href="#project" class="btn">View Projects</a>
+       <a href="#contact" class="btn">Contact Me</a>
       </div>
     </div>
-    <img src="/images/hero.png" alt="hero-image" class="hero-image"/>
+    <div class="hero-image">
+      <div class="img-box">
+        <div class="image-item">
+          <img src="/images/hero.png" alt="hero-image" class="hero-image"/>
+        </div>
+      </div>
+    </div>
    </div>
   </section>
       <!-- Marquee -->
@@ -79,6 +85,10 @@
       <span>Virtualization</span><span class="dot">·</span>
       <span>UI/UX Design</span><span class="dot">·</span>
       <span>Web Development</span><span class="dot">·</span>
+      <span>Database management</span><span class="dot">·</span>
+      <span>API Development</span><span class="dot">·</span>
+      <span>Virtualization</span><span class="dot">·</span>
+        <span>UI/UX Design</span><span class="dot">·</span>
       <span>Database management</span><span class="dot">·</span>
       <span>API Development</span><span class="dot">·</span>
       <span>Virtualization</span><span class="dot">·</span>
@@ -94,11 +104,16 @@
     <div class="about-grid">
       <div class="about-text">
         <p class="about-lead">I am a software developer with expertise in front-end development, object-oriented programming, and database management.<br> I build scalable, maintainable, and interactive web applications using modern technologies and AI-assisted development tools to improve efficiency, optimize code quality, and accelerate problem-solving. <br>My focus is on delivering reliable and user-centered digital solutions.
-</p>
+        </p>
       </div>
-      <div class="about-skills">
-        <div class="skill-group">
-          <h4>Skills</h4>
+      <div class="card">
+      <div class="tab-bar">
+        <button class="tab-btn active" onclick="switchTab('skills', this)" data-target="skills">Skills</button>
+        <button class="tab-btn"        onclick="switchTab('experience', this)" data-target="experience">Experience</button>
+        <button class="tab-btn" onclick="switchTab('education', this)" data-target="education">Education</button>
+      </div>
+      <div>
+        <div class="tab-panel active" id="skills">
           <ul>
             <li><span>Languages</span><br>Java, Python, JavaScript, HTML5, CSS3</li>
             <li><span>Frameworks</span><br>React, Vue.js</li>
@@ -108,8 +123,7 @@
             <li><span>Professional skills</span><br>Problem-solving, Collaboration, Communication</li>
           </ul>
         </div>
-        <div class="skill-group">
-          <h4>Experience</h4>
+        <div class="tab-panel" id="experience">
           <ul>
             <li>HTML / CSS / JS</li>
             <li>React & Next.js</li>
@@ -117,13 +131,13 @@
             <li>Node.js</li>
           </ul>
         </div>
-        <div class="skill-group">
-          <h4>Education</h4>
+        <div class="tab-panel" id="education" >
           <ul>
             <li>Bachelor of Science in Software Engineering</li>
             <li>The Co-operative Universiry of Kenya</li>
           </ul>
         </div>
+      </div>
       </div>
     </div>
       </div>
@@ -240,12 +254,14 @@
       </div>
       <div class="contact-inner">
       <div class="contact-lead">
-        <p>Have a project in mind? <em>Let's talk.</em></p>
-        <p><img src="/images/phone.png"><a href="tel:+254759564714" class="contact-phone">&nbsp;+254759564714</a></p>
-        <p><img src="/images/email.png"><a href="mailto:oburamitchelle87@gmail.com" class="contact-email">&nbsp;oburamitchelle87@gmail.com</a></p>
+        <h4>Have a project in mind? <em>Let's talk.</em></h4>
+       <div class="contact-detail">
+          <p><img src="/images/phone.png"><a href="tel:+254759564714">&nbsp;+254759564714</a></p>
+          <p><img src="/images/email.png"><a href="mailto:oburamitchelle87@gmail.com">&nbsp;oburamitchelle87@gmail.com</a></p>
+       </div>
       </div>
        <div class="contact-social">
-        <p>Follow on social media for more information.</p>
+        <h4>Follow on social media for more information.</h4>
         <div class="social-links">
           <a href="#"><img src="/images/linkedin.svg"></a>
           <a href="https://github.com/Oburamitchelle"><img src="/images/github.svg"></a>

@@ -5,23 +5,73 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   // ─── Hamburger Mobile Menu ────────────────────────────────
-  const hamburger = document.getElementById('hamburger');
-  const mobileMenu = document.getElementById('mobileMenu');
-  const mobileLinks = document.querySelectorAll('.mobile-link');
+const hamburger  = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
 
-  hamburger.addEventListener('click', () => {
-    const isOpen = mobileMenu.classList.toggle('open');
-    hamburger.classList.toggle('open', isOpen);
-    document.body.style.overflow = isOpen ? 'hidden' : '';
-  });
+/* ── Helper: open / close state ── */
+function openMenu() {
+  hamburger.classList.add('open');
+  mobileMenu.classList.add('open');
+  hamburger.setAttribute('aria-expanded', 'true');
+  document.body.style.overflow = 'hidden';   // prevent background scroll
+}
 
-  mobileLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      mobileMenu.classList.remove('open');
-      hamburger.classList.remove('open');
-      document.body.style.overflow = '';
-    });
+function closeMenu() {
+  hamburger.classList.remove('open');
+  mobileMenu.classList.remove('open');
+  hamburger.setAttribute('aria-expanded', 'false');
+  document.body.style.overflow = '';
+}
+
+function isOpen() {
+  return hamburger.classList.contains('open');
+}
+
+/* ── Toggle on hamburger click ── */
+hamburger.addEventListener('click', (e) => {
+  e.stopPropagation();
+  isOpen() ? closeMenu() : openMenu();
+});
+
+/* ── Close on nav link click ── */
+mobileMenu.querySelectorAll('a').forEach((link) => {
+  link.addEventListener('click', closeMenu);
+});
+
+/* ── Close on outside click ── */
+document.addEventListener('click', (e) => {
+  if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) {
+    closeMenu();
+  }
+});
+
+/* ── Close on Escape key ── */
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && isOpen()) closeMenu();
+});
+
+// Select all tab buttons and all panels once
+const tabButtons = document.querySelectorAll('.tab-btn');
+const tabPanels  = document.querySelectorAll('.tab-panel');
+
+// Add a click listener to every button
+tabButtons.forEach(function(btn) {
+  btn.addEventListener('click', function() {
+
+    // 1. Remove active state from every button and panel
+    tabButtons.forEach(function(b) { b.classList.remove('active'); });
+    tabPanels.forEach(function(p)  { p.classList.remove('active'); });
+
+    // 2. Activate the clicked button
+    btn.classList.add('active');
+
+    // 3. Show the matching panel (data-target matches panel id)
+    const targetId = btn.getAttribute('data-target');
+    document.getElementById(targetId).classList.add('active');
+
   });
+});
+
 
 
   // ─── Custom Cursor ───────────────────────────────────────
@@ -57,6 +107,8 @@ document.addEventListener('DOMContentLoaded', () => {
     cursor.style.opacity = '1';
     trail.style.opacity = '1';
   });
+  
+  
 
 
   // ─── Nav Scroll Behavior ─────────────────────────────────
@@ -182,7 +234,6 @@ document.addEventListener('DOMContentLoaded', () => {
       marquee.style.animationPlayState = 'running';
     });
   }
-
 
   // ─── Nav Link Active State on Scroll ─────────────────────
   const sections = document.querySelectorAll('section[id]');
