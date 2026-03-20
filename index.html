@@ -1,286 +1,463 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mitchelle Obura — Software Developer</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Syne:wght@400..800&display=swap" rel="stylesheet">
-<body>
-  <!-- Navigation -->
-    <nav>
-    <p class="logo">MO</p>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Mitchelle Obura — Software Developer</title>
+        <link rel="stylesheet" href="style.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Syne:wght@400..800&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+    <body>
+        <!-- Navigation -->
+        <nav>
+            <p class="logo">MO</p>
 
-    <ul class="nav-links">
-      <li><a href="#home" class="active">Home</a></li>
-      <li><a href="#project">Work</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
+            <ul class="nav-links">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#project">Projects</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
 
-    <div class="nav-cta">
-       <div class="nav-status"><span class="status-dot"></span><p>Available for work</p>
-       </div>
-      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-      </button>
-    </div>
-  </nav>
+            <div class="nav-cta">
+                <div class="nav-status">
+                    <span class="status-dot"></span>
+                    <p>Available for work</p>
+                </div>
+                <button
+                    class="hamburger"
+                    id="hamburger"
+                    aria-label="Toggle menu"
+                    aria-expanded="false"
+                >
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </nav>
 
-  <!-- MOBILE MENU -->
-  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Mobile navigation">
-    <ul>
-      <li><a href="#home" class="active">Home</a></li>
-      <li><a href="#project">Work</a></li>
-      <li><a href="#about">About Me</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <div class="mobile-divider"></div>
-    <div class="mobile-status">
-      <span class="status-dot"></span> <p>Available for work</p>
-    </div>
-  </div>
-  <!-- Hero -->
-  <section class="hero" id="home">
-   <div class="hero-content">
-     <div class="hero-words">
-       <h1 class="hero-eyebrow">
-       <span class="line"></span>
-       <span>Portfolio</span>
-      </h1>
-     <div class="hero-title">
-        <h2>
-      <span class="title-line italic" data-delay="0">It's me</span>
-      <span class="title-line" data-delay="100"><br>Mitchelle Obura</span>
-      <span class="title-line" data-delay="200"><br>Full stack Software<br>developer & Tech enthusiast</span>
-      </h2>
-     </div>
-      <div class="hero-meta">
-        <p class="hero-desc">Building scalable web apps with React, Python, and AI smarts—turning data into dynamic experiences that scale and surprise.</p>
-      </div>
-      <div class="hero-btn">
-       <a href="#project" class="btn">View Projects</a>
-       <a href="#contact" class="btn">Contact Me</a>
-      </div>
-    </div>
-    <div class="hero-image">
-      <div class="img-box">
-        <div class="image-item">
-          <img src="/images/hero.png" alt="hero-image" class="hero-image"/>
+        <!-- MOBILE MENU -->
+        <div
+            class="mobile-menu"
+            id="mobileMenu"
+            role="dialog"
+            aria-label="Mobile navigation"
+        >
+            <ul>
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#project">Work</a></li>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="mobile-divider"></div>
+            <div class="mobile-status">
+                <span class="status-dot"></span>
+                <p>Available for work</p>
+            </div>
         </div>
-      </div>
-    </div>
-   </div>
-  </section>
-      <!-- Marquee -->
-  <div class="marquee-wrapper">
-    <div class="marquee">
-      <span>UI/UX Design</span><span class="dot">·</span>
-      <span>Database management</span><span class="dot">·</span>
-      <span>API Development</span><span class="dot">·</span>
-      <span>Virtualization</span><span class="dot">·</span>
-      <span>UI/UX Design</span><span class="dot">·</span>
-      <span>Web Development</span><span class="dot">·</span>
-      <span>Database management</span><span class="dot">·</span>
-      <span>API Development</span><span class="dot">·</span>
-      <span>Virtualization</span><span class="dot">·</span>
-        <span>UI/UX Design</span><span class="dot">·</span>
-      <span>Database management</span><span class="dot">·</span>
-      <span>API Development</span><span class="dot">·</span>
-      <span>Virtualization</span><span class="dot">·</span>
-    </div>
-  </div>
-  <!-- About Section -->
-  <section class="about" id="about">
-    <div>
-      <div>
-        <div class="section-header">
-      <h2 class="section-title">About Me</h2>
-    </div>
-    <div class="about-grid">
-      <div class="about-text">
-        <p class="about-lead">I am a software developer with expertise in front-end development, object-oriented programming, and database management.<br> I build scalable, maintainable, and interactive web applications using modern technologies and AI-assisted development tools to improve efficiency, optimize code quality, and accelerate problem-solving. <br>My focus is on delivering reliable and user-centered digital solutions.
-        </p>
-      </div>
-      <div class="card">
-      <div class="tab-bar">
-        <button class="tab-btn active" onclick="switchTab('skills', this)" data-target="skills">Skills</button>
-        <button class="tab-btn"        onclick="switchTab('experience', this)" data-target="experience">Experience</button>
-        <button class="tab-btn" onclick="switchTab('education', this)" data-target="education">Education</button>
-      </div>
-      <div>
-        <div class="tab-panel active" id="skills">
-          <ul>
-            <li><span>Languages</span><br>Java, Python, JavaScript, HTML5, CSS3</li>
-            <li><span>Frameworks</span><br>React, Vue.js</li>
-            <li><span>Database</span><br>SQL, Firebase</li>
-            <li><span>APIs</span><br>RESTful API Design, API integration</li>
-            <li><span>Tools</span><br>VScode, IntelliJ IDEA, Jira, Git, GitHub</li>
-            <li><span>Professional skills</span><br>Problem-solving, Collaboration, Communication</li>
-          </ul>
+        <!-- Hero -->
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <div class="hero-words">
+                    <h1 class="hero-eyebrow">
+                        <span class="line"></span>
+                        <span>Portfolio</span>
+                    </h1>
+                    <div class="hero-title">
+                        <h2>
+                            <span class="title-line italic" data-delay="0"
+                                >It's me</span
+                            >
+                            <span class="title-line" data-delay="100"
+                                ><br />Mitchelle Obura</span
+                            >
+                            <span class="title-line" data-delay="200"
+                                ><br />Full stack Software<br />developer & Tech
+                                enthusiast</span
+                            >
+                        </h2>
+                    </div>
+                    <div class="hero-meta">
+                        <p class="hero-desc">
+                            Building scalable web apps with React, Python, and
+                            AI smarts—turning data into dynamic experiences that
+                            scale and surprise.
+                        </p>
+                    </div>
+                    <div class="hero-btn">
+                        <a href="#project">View Projects</a>
+                        <a href="#contact">Contact Me</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="img-box">
+                        <div class="image-item">
+                            <img
+                                src="/images/hero.png"
+                                alt="hero-image"
+                                class="hero-image"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Marquee -->
+        <div class="marquee-wrapper">
+            <div class="marquee">
+                <span>UI/UX Design</span><span class="dot">·</span>
+                <span>Database management</span><span class="dot">·</span>
+                <span>API Development</span><span class="dot">·</span>
+                <span>Virtualization</span><span class="dot">·</span>
+                <span>UI/UX Design</span><span class="dot">·</span>
+                <span>Web Development</span><span class="dot">·</span>
+                <span>Database management</span><span class="dot">·</span>
+                <span>API Development</span><span class="dot">·</span>
+                <span>Virtualization</span><span class="dot">·</span>
+                <span>UI/UX Design</span><span class="dot">·</span>
+                <span>Database management</span><span class="dot">·</span>
+                <span>API Development</span><span class="dot">·</span>
+                <span>Virtualization</span><span class="dot">·</span>
+            </div>
         </div>
-        <div class="tab-panel" id="experience">
-          <ul>
-            <li>HTML / CSS / JS</li>
-            <li>React & Next.js</li>
-            <li>Three.js / WebGL</li>
-            <li>Node.js</li>
-          </ul>
-        </div>
-        <div class="tab-panel" id="education" >
-          <ul>
-            <li>Bachelor of Science in Software Engineering</li>
-            <li>The Co-operative Universiry of Kenya</li>
-          </ul>
-        </div>
-      </div>
-      </div>
-    </div>
-      </div>
-    </div>
-  </section>
-   <!-- Work Section -->
-  <section class="work" id="projects">
-    <div class="section-header">
-      <h2 class="section-title">Selected Work</h2>
-    </div>
+        <!-- About Section -->
+        <section class="about" id="about">
+            <div class="section-header">
+                <h2 class="section-title">About Me</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <div class="about-lead">
+                        <p>
+                            I am a software developer with expertise in
+                            front-end development, object-oriented programming,
+                            and database management.
+                        </p>
+                        <p>
+                            I build scalable, maintainable, and interactive web
+                            applications using modern technologies and
+                            AI-assisted development tools to improve efficiency,
+                            optimize code quality, and accelerate
+                            problem-solving.
+                        </p>
+                        <p>
+                            My focus is on delivering reliable and user-centered
+                            digital solutions.
+                        </p>
+                        <p>Currently based in <em>Nairobi</em></p>
+                    </div>
+                    <div class="about-btn">
+                        <a href="">view cv</a>
+                        <a href="">Download cv</a>
+                    </div>
+                </div>
+                <div class="tab-card">
+                    <div class="tab-bar">
+                        <button
+                            class="tab-btn active"
+                            onclick="switchTab('skills', this)"
+                            data-target="skills"
+                        >
+                            Skills
+                        </button>
+                        <button
+                            class="tab-btn"
+                            onclick="switchTab('experience', this)"
+                            data-target="experience"
+                        >
+                            Experience
+                        </button>
+                        <button
+                            class="tab-btn"
+                            onclick="switchTab('education', this)"
+                            data-target="education"
+                        >
+                            Education
+                        </button>
+                    </div>
+                    <div>
+                        <div class="tab-panel active" id="skills">
+                            <ul>
+                                <li>
+                                    <span>Languages</span><br />Java, Python,
+                                    JavaScript, HTML5, CSS3
+                                </li>
+                                <li>
+                                    <span>Frameworks</span><br />React, Vue.js
+                                </li>
+                                <li>
+                                    <span>Database</span><br />SQL, Firebase
+                                </li>
+                                <li>
+                                    <span>APIs</span><br />RESTful API Design,
+                                    API integration
+                                </li>
+                                <li>
+                                    <span>Tools</span><br />VScode, IntelliJ
+                                    IDEA, Jira, Git, GitHub
+                                </li>
+                                <li>
+                                    <span>Professional skills</span
+                                    ><br />Problem-solving, Collaboration,
+                                    Communication
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="tab-panel" id="experience">
+                            <ul>
+                                <li>HTML / CSS / JS</li>
+                                <li>React & Next.js</li>
+                                <li>Three.js / WebGL</li>
+                                <li>Node.js</li>
+                            </ul>
+                        </div>
+                        <div class="tab-panel" id="education">
+                            <ul>
+                                <li>
+                                    Bachelor of Science in Software Engineering
+                                </li>
+                                <li>The Co-operative Universiry of Kenya</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="stats-row">
+                <div class="stat">
+                    <span class="stat-number" data-target="10">0</span>
+                    <span class="stat-suffix">+</span>
+                    <span class="stat-label">Years Experience</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" data-target="60">0</span>
+                    <span class="stat-suffix">+</span>
+                    <span class="stat-label">Projects Completed</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" data-target="30">0</span>
+                    <span class="stat-suffix">+</span>
+                    <span class="stat-label">Happy Clients</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" data-target="12">0</span>
+                    <span class="stat-suffix"></span>
+                    <span class="stat-label">Awards Won</span>
+                </div>
+            </div>
+        </section>
 
-    <div class="projects-grid">
+        <section class="project" id="project">
+            <div class="section-header">
+                <h2 class="section-title">Projects</h2>
+            </div>
+            <div class="project-content">
+                <article class="project-card" data-index="01">
+                    <div class="project-shape shape-1"></div>
+                    <div class="project-info">
+                        <div class="project-tags">
+                            <span>Branding</span><span>Web</span>
+                        </div>
+                        <h3 class="project-title">Luminary Studio</h3>
+                        <p class="project-desc">
+                            A complete brand identity and digital presence for a
+                            creative agency pushing the boundaries of modern
+                            aesthetics.
+                        </p>
+                        <a href="#" class="project-link">
+                            View Case Study
+                            <svg
+                                width="16"
+                                height="16"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.5"
+                            >
+                                <path d="M5 12h14M12 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                    </div>
+                </article>
 
-      <article class="project-card" data-index="01">
-        <div class="project-img">
-          <div class="project-img-inner" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);">
-            <div class="project-shape shape-1"></div>
-          </div>
-        </div>
-        <div class="project-info">
-          <div class="project-tags">
-            <span>Branding</span><span>Web</span>
-          </div>
-          <h3 class="project-title">Luminary Studio</h3>
-          <p class="project-desc">A complete brand identity and digital presence for a creative agency pushing the boundaries of modern aesthetics.</p>
-          <a href="#" class="project-link">
-            View Case Study
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
-        </div>
-      </article>
+                <article class="project-card" data-index="02">
+                    <div class="project-shape shape-2"></div>
+                    <div class="project-info">
+                        <div class="project-tags">
+                            <span>App Design</span><span>Development</span>
+                        </div>
+                        <h3 class="project-title">Vela Finance</h3>
+                        <p class="project-desc">
+                            Redefining personal finance with an interface that
+                            transforms data complexity into serene clarity.
+                        </p>
+                        <a href="#" class="project-link">
+                            View Case Study
+                            <svg
+                                width="16"
+                                height="16"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.5"
+                            >
+                                <path d="M5 12h14M12 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                    </div>
+                </article>
 
-      <article class="project-card" data-index="02">
-        <div class="project-img">
-          <div class="project-img-inner" style="background: linear-gradient(135deg, #2d1b69 0%, #11998e 100%);">
-            <div class="project-shape shape-2"></div>
-          </div>
-        </div>
-        <div class="project-info">
-          <div class="project-tags">
-            <span>App Design</span><span>Development</span>
-          </div>
-          <h3 class="project-title">Vela Finance</h3>
-          <p class="project-desc">Redefining personal finance with an interface that transforms data complexity into serene clarity.</p>
-          <a href="#" class="project-link">
-            View Case Study
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
-        </div>
-      </article>
+                <article class="project-card" data-index="03">
+                    <div class="project-shape shape-3"></div>
+                    <div class="project-info">
+                        <div class="project-tags">
+                            <span>Motion</span><span>Interactive</span
+                            ><span>Featured</span>
+                        </div>
+                        <h3 class="project-title">
+                            Epoch — Interactive Installation
+                        </h3>
+                        <p class="project-desc">
+                            An immersive web experience that uses generative art
+                            and real-time data to visualize the passage of time
+                            as an emotional journey.
+                        </p>
+                        <a href="#" class="project-link">
+                            View Case Study
+                            <svg
+                                width="16"
+                                height="16"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.5"
+                            >
+                                <path d="M5 12h14M12 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                    </div>
+                </article>
 
-      <article class="project-card featured" data-index="03">
-        <div class="project-img">
-          <div class="project-img-inner" style="background: linear-gradient(135deg, #3d0c02 0%, #c62828 50%, #ff5722 100%);">
-            <div class="project-shape shape-3"></div>
-          </div>
-        </div>
-        <div class="project-info">
-          <div class="project-tags">
-            <span>Motion</span><span>Interactive</span><span>Featured</span>
-          </div>
-          <h3 class="project-title">Epoch — Interactive Installation</h3>
-          <p class="project-desc">An immersive web experience that uses generative art and real-time data to visualize the passage of time as an emotional journey.</p>
-          <a href="#" class="project-link">
-            View Case Study
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
-        </div>
-      </article>
+                <article class="project-card" data-index="04">
+                    <div class="project-shape shape-4"></div>
+                    <div class="project-info">
+                        <div class="project-tags">
+                            <span>E-Commerce</span><span>UX</span>
+                        </div>
+                        <h3 class="project-title">Forma Collective</h3>
+                        <p class="project-desc">
+                            Luxury fashion e-commerce reimagined. Where
+                            editorial storytelling meets seamless purchase flow.
+                        </p>
+                        <a href="#" class="project-link">
+                            View Case Study
+                            <svg
+                                width="16"
+                                height="16"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.5"
+                            >
+                                <path d="M5 12h14M12 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </section>
 
-      <article class="project-card" data-index="04">
-        <div class="project-img">
-          <div class="project-img-inner" style="background: linear-gradient(135deg, #0d2137 0%, #1e5f74 100%);">
-            <div class="project-shape shape-4"></div>
-          </div>
-        </div>
-        <div class="project-info">
-          <div class="project-tags">
-            <span>E-Commerce</span><span>UX</span>
-          </div>
-          <h3 class="project-title">Forma Collective</h3>
-          <p class="project-desc">Luxury fashion e-commerce reimagined. Where editorial storytelling meets seamless purchase flow.</p>
-          <a href="#" class="project-link">
-            View Case Study
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
-        </div>
-      </article>
+        <!-- Contact Section -->
+        <section class="contact" id="contact">
+            <div class="section-header">
+                <h2 class="section-title">Get in Touch</h2>
+            </div>
+            <div class="contact-information">
+                <div class="contact-form">
+                    <form>
+                        <div class="form-inputs">
+                            <div class="form-group">
+                                <input
+                                    type="text"
+                                    placeholder="Your Name"
+                                    required
+                                />
+                            </div>
+                            <div class="form-group">
+                                <input
+                                    type="email"
+                                    placeholder="Your Email"
+                                    required
+                                />
+                            </div>
+                            <div class="form-group">
+                                <textarea
+                                    placeholder="Your Message"
+                                    rows="5"
+                                ></textarea>
+                            </div>
+                        </div>
+                        <button type="submit" class="form-btn">Submit</button>
+                    </form>
+                </div>
+                <div class="contact-inner">
+                    <div class="contact-lead">
+                        <h4>Have a project in mind? <em>Let's talk.</em></h4>
+                        <div class="contact-detail">
+                            <p>
+                                <img src="/images/phone.png" /><a
+                                    href="tel:+254759564714"
+                                    >&nbsp;+254759564714</a
+                                >
+                            </p>
+                            <p>
+                                <img src="/images/email.png" /><a
+                                    href="mailto:oburamitchelle87@gmail.com"
+                                    >&nbsp;oburamitchelle87@gmail.com</a
+                                >
+                            </p>
+                        </div>
+                    </div>
+                    <div class="contact-social">
+                        <h4>Follow on social media for more information.</h4>
+                        <div class="social-links">
+                            <a href="#"><img src="/images/linkedin.svg" /></a>
+                            <a href="https://github.com/Oburamitchelle"
+                                ><img src="/images/github.svg"
+                            /></a>
+                            <a
+                                href="https://www.instagram.com/mitc.hey4?igsh=MWw1eGlrMHNpNTk5aw=="
+                                ><img src="/images/instagram.svg"
+                            /></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    </div>
-  </section>
+        <!-- Footer -->
+        <footer class="footer">
+            <span>© 2026 Mitchelle Obura</span>
+            <a href="#home" class="back-top">
+                Back to Top
+                <svg
+                    width="12"
+                    height="12"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                >
+                    <path d="M12 19V5M5 12l7-7 7 7" />
+                </svg>
+            </a>
+        </footer>
 
-  <!-- Contact Section -->
-  <section class="contact" id="contact">
-    <div class="section-header">
-      <h2 class="section-title">Get in Touch</h2>
-    </div>
-    <div class="contact-information">
-      <div class="contact-form">
-        <form>
-          <div class="form-inputs">
-            <div class="form-group">
-            <input type="text" placeholder="Your Name" required>
-           </div>
-          <div class="form-group">
-            <input type="email" placeholder="Your Email" required>
-          </div>
-           <div class="form-group">
-             <textarea placeholder="Your Message" rows="5"></textarea>
-           </div>
-          </div>
-           <button type="submit" class="form-btn">Submit</button>
-         </form>
-      </div>
-      <div class="contact-inner">
-      <div class="contact-lead">
-        <h4>Have a project in mind? <em>Let's talk.</em></h4>
-       <div class="contact-detail">
-          <p><img src="/images/phone.png"><a href="tel:+254759564714">&nbsp;+254759564714</a></p>
-          <p><img src="/images/email.png"><a href="mailto:oburamitchelle87@gmail.com">&nbsp;oburamitchelle87@gmail.com</a></p>
-       </div>
-      </div>
-       <div class="contact-social">
-        <h4>Follow on social media for more information.</h4>
-        <div class="social-links">
-          <a href="#"><img src="/images/linkedin.svg"></a>
-          <a href="https://github.com/Oburamitchelle"><img src="/images/github.svg"></a>
-          <a href="https://www.instagram.com/mitc.hey4?igsh=MWw1eGlrMHNpNTk5aw=="><img src="/images/instagram.svg"></a>
-        </div>
-      </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <span>© 2026 Mitchelle Obura</span>
-    <a href="#home" class="back-top">
-      Back to Top
-      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
-    </a>
-  </footer>
-
-  <script src="script.js"></script>
-</body>
+        <script src="script.js"></script>
+    </body>
 </html>

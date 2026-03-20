@@ -1,6 +1,3 @@
-/* ===========================
-   PORTFOLIO SCRIPT.JS
-=========================== */
 
 document.addEventListener('DOMContentLoaded', () => {
 
