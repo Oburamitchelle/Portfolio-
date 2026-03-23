@@ -8,11 +8,12 @@
 :root {
     --bg: #121212;
     --bg-2: #1c1c1c;
-    --text: #fdf8e1;
+    --text: #f8f8f8;
     --text-muted: #b0b0b0;
     --accent: #008080;
     --accent-dim: #00fafa26;
-    --cta: #b87333;
+    --hover: #ffb873;
+    --cta: #00aaaa;
     --border: #6a8f8f;
     --font-display: "Syne", sans-serif;
     --font-headings: "Cormorant Garamond", serif;
@@ -36,24 +37,12 @@ body {
 }
 
 a {
-    color: inherit;
+    color: var(--bg);
     text-decoration: none;
 }
 
 ul {
     list-style: none;
-}
-
-body:has(a:hover) .cursor,
-body:has(.project-card:hover) .cursor {
-    width: 16px;
-    height: 16px;
-}
-
-body:has(a:hover) .cursor-trail,
-body:has(.project-card:hover) .cursor-trail {
-    width: 56px;
-    height: 56px;
 }
 
 nav {
@@ -88,11 +77,11 @@ nav {
 }
 
 .nav-links a {
-    font-size: 25px;
+    font-size: 20px;
     font-family: var(--font-headings);
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: var(--text-muted);
+    color: var(--text);
     position: relative;
     transition: color 0.3s;
 }
@@ -104,12 +93,11 @@ nav {
     left: 0;
     width: 0;
     height: 1px;
-    background: var(--accent);
     transition: width 0.4s var(--ease);
 }
 
 .nav-links a:hover {
-    color: var(--cta);
+    color: var(--hover);
 }
 
 .nav-links a:hover::after {
@@ -121,11 +109,12 @@ nav {
     align-items: center;
     gap: 1rem;
 }
+
 .nav-status {
     display: flex;
     align-items: center;
     gap: 8px;
-    font-size: 11px;
+    font-size: 15px;
     color: var(--text-muted);
     letter-spacing: 0.08em;
 }
@@ -142,7 +131,7 @@ nav {
     0%,
     100% {
         opacity: 1;
-        box-shadow: 0 0 0 0 var(--cta);
+        box-shadow: 0 0 0 0 var(--hover);
     }
     50% {
         opacity: 0.8;
@@ -189,20 +178,20 @@ nav {
 
 /* Open (×) state */
 .hamburger.open .bar:nth-child(1) {
-    transform: translateY(7px) rotate(45deg);
+    transform: translateY(8px) rotate(45deg);
 }
 .hamburger.open .bar:nth-child(2) {
     opacity: 0;
     width: 100%;
 }
 .hamburger.open .bar:nth-child(3) {
-    transform: translateY(-7px) rotate(-45deg);
+    transform: translateY(-8px) rotate(-45deg);
 }
 
 .mobile-menu {
     display: none;
     position: fixed;
-    top: 68px;
+    top: 60px;
     left: auto;
     right: 0;
     background: var(--bg);
@@ -226,7 +215,6 @@ nav {
 }
 
 .mobile-menu ul {
-    list-style: none;
     display: flex;
     flex-direction: column;
     gap: 0.2rem;
@@ -249,7 +237,7 @@ nav {
 }
 
 .mobile-menu ul a:hover {
-    color: var(--cta);
+    color: var(--hover);
     background: var(--border);
 }
 
@@ -264,6 +252,7 @@ nav {
     background: var(--border);
     margin-bottom: 1rem;
 }
+
 .mobile-status {
     display: flex;
     align-items: center;
@@ -274,7 +263,6 @@ nav {
 }
 .hero {
     min-height: auto;
-    margin-top: 40px;
     display: flex;
     justify-content: center;
     padding: 60px 35px 0px;
@@ -305,8 +293,6 @@ nav {
     flex-wrap: wrap;
     justify-content: space-between;
     gap: 5rem;
-    margin: 0;
-    padding: 0;
 }
 .hero-words {
     margin: 0;
@@ -332,7 +318,7 @@ nav {
     display: block;
     width: 15px;
     height: 1px;
-    background: var(--cta);
+    background: var(--hover);
 }
 
 .hero-title {
@@ -382,13 +368,20 @@ nav {
     gap: 48px;
 }
 
-.hero-btn a {
+.hero-btn a,
+.about-btn a {
     display: flex;
     padding: 10px 20px;
+    text-transform: capitalize;
     position: relative;
     justify-content: center;
     align-items: center;
-    background: var(--accent);
+    background: linear-gradient(
+        135deg,
+        #00fafa26 0%,
+        #008080 70%,
+        #ffb873 100%
+    );
     border-radius: 30px;
     font-weight: 400;
     transition: all 0.1s ease;
@@ -396,8 +389,9 @@ nav {
     cursor: pointer;
 }
 
-.hero-btn a:hover {
-    background: var(--cta);
+.hero-btn a:hover,
+.about-btn a:hover {
+    background: linear-gradient(135deg, #b87333 0%, #ffb873 70%, #f8f8f8 100%);
 }
 
 .hero-image .img-box {
@@ -430,36 +424,6 @@ nav {
     line-height: 1.5;
 }
 
-.hero-scroll {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-    font-size: 10px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--text-muted);
-}
-
-.scroll-line {
-    width: 1px;
-    height: 60px;
-    background: linear-gradient(to bottom, var(--accent), transparent);
-    animation: scrollPulse 2s ease-in-out infinite;
-}
-
-@keyframes scrollPulse {
-    0%,
-    100% {
-        transform: scaleY(1);
-        opacity: 1;
-    }
-    50% {
-        transform: scaleY(0.6);
-        opacity: 0.5;
-    }
-}
-
 @keyframes fadeUp {
     to {
         opacity: 1;
@@ -474,9 +438,7 @@ nav {
     }
 }
 
-/* ===========================
-MARQUEE
-=========================== */
+/*marquee*/
 .marquee-wrapper {
     min-height: auto;
     margin: 5px;
@@ -492,7 +454,7 @@ MARQUEE
     gap: 30px;
     white-space: nowrap;
     animation: marqueeScroll 10s linear infinite;
-    font-family: var(--font-serif);
+    font-family: var(--font-headings);
     font-size: 20px;
     font-style: italic;
     color: var(--text-muted);
@@ -511,15 +473,13 @@ MARQUEE
     }
 }
 
-/* ===========================
-SECTION COMMONS
-=========================== */
+/*section*/
 section {
     position: relative;
-    background-image:
-        radial-gradient(at 80% 20%, #121212 0px, transparent 50%),
-        radial-gradient(at 20% 40%, #00fafa05 0px, transparent 50%),
-        radial-gradient(at 50% 10%, #121212 0px, transparent 50%);
+    background:
+        radial-gradient(at 80% 20%, #121212 0px, transparent 80%),
+        radial-gradient(at 20% 40%, #00fafa05 0px, transparent 60%),
+        radial-gradient(at 60% 5%, #00fafa10 0px, transparent 40%);
     justify-content: center;
     align-items: center;
     padding: 120px 48px;
@@ -531,7 +491,7 @@ section {
     align-items: baseline;
     margin-bottom: 25px;
     border-bottom: 1px solid var(--border);
-    padding-bottom: 24px;
+    padding-bottom: 20px;
 }
 
 .section-title {
@@ -544,13 +504,17 @@ section {
 .project-content {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 30px;
+    padding: 30px 10px;
 }
 
 .project-card {
     flex: 1;
+    margin-top: 20px;
     border-radius: 30px;
-    padding: 20px;
+    z-index: 1;
+    background: var(--bg-2);
+    padding: 3px;
     min-width: 200px;
     background: linear-gradient(
         135deg,
@@ -560,21 +524,77 @@ section {
     );
     position: relative;
     overflow: hidden;
-    transition: transform 0.5s var(--ease);
+}
+.project-card::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(
+        from 0deg,
+        transparent 0%,
+        #ffb87370 40%,
+        #00808080 50%,
+        #ffb87370 60%,
+        #00808080 70%,
+        transparent 100%
+    );
+    animation: rotate 2s linear infinite;
+    animation-play-state: paused;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -2;
+}
+.project-card::after {
+    content: "";
+    position: absolute;
+    inset: 3px;
+    border-radius: 27px;
+    z-index: -1;
+    background: var(--bg-2);
+}
+.project-card .card-content {
+    background: linear-gradient(
+        135deg,
+        #1c1c1c 0%,
+        #00fafa10 50%,
+        #1c1c1c 100%
+    );
+    border-radius: 30px;
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
 }
 
 .project-card:hover {
-    z-index: 2;
+    box-shadow: 0 4px 6px #00fafa26;
 }
 
-.project-card:hover {
-    transform: scale(1.05);
+.project-card:hover::before {
+    opacity: 1;
+    animation-play-state: running;
 }
 
+@keyframes rotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+.project-info {
+    position: relative;
+    z-index: 4;
+    padding: 10px;
+}
 .project-shape {
     position: absolute;
     border-radius: 50%;
+    pointer-events: none;
     opacity: 0.3;
+    z-index: 2;
 }
 
 .shape-1 {
@@ -582,17 +602,17 @@ section {
     height: 200px;
     top: -50px;
     right: -50px;
-    background: radial-gradient(circle, #00fafa26 0%, transparent 50%);
+    background: radial-gradient(circle, #00fafa30 0%, transparent 50%);
 }
 .shape-2 {
-    background: conic-gradient(from 180deg, #1c1c1c, transparent, #00fafa26);
+    background: conic-gradient(from 180deg, #1c1c1c, transparent, #00fafa30);
     width: 300px;
     height: 300px;
     bottom: -100px;
     left: -50px;
 }
 .shape-3 {
-    background: radial-gradient(ellipse, #00fafa26, transparent 60%);
+    background: radial-gradient(ellipse, #00fafa30, transparent 60%);
     width: 400px;
     height: 400px;
     top: 50%;
@@ -600,7 +620,7 @@ section {
     transform: translate(-50%, -50%);
 }
 .shape-4 {
-    background: linear-gradient(45deg, #00fafa26, transparent);
+    background: linear-gradient(45deg, #00fafa30, transparent);
     border: 1px solid rgba(255, 255, 255, 0.2);
     width: 150px;
     height: 150px;
@@ -628,10 +648,11 @@ section {
     justify-content: center;
     align-items: center;
     opacity: 1;
-    padding: 20px;
+    padding: 5px;
 }
 .project-info {
-    padding: 32px 36px 36px;
+    z-index: 2;
+    padding: 20px;
 }
 
 .project-tags {
@@ -642,25 +663,20 @@ section {
 }
 
 .project-tags span {
-    font-size: 12px;
-    letter-spacing: 0.12em;
+    font-size: 10px;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--text-muted);
-    border: 1px solid var(--border);
-    padding: 2px 5px;
+    color: var(--hover);
+    border: 0.6px solid var(--border);
+    padding: 5px;
     transition:
         border-color 0.3s,
         color 0.3s;
 }
 
-.project-card:hover .project-tags span {
-    border-color: var(--border);
-    color: var(--accent);
-}
-
 .project-title {
     font-family: var(--font-headings);
-    color: var(--cta);
+    color: var(--accent);
     font-size: 28px;
     font-weight: 400;
     line-height: 1.2;
@@ -671,16 +687,18 @@ section {
 .project-link {
     display: inline-flex;
     align-items: center;
+    z-index: 3;
     gap: 8px;
     font-size: 15px;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--accent);
+    color: var(--border);
     transition: gap 0.3s var(--ease);
 }
 
 .project-link:hover {
     gap: 14px;
+    color: var(--hover);
 }
 
 .project-card[data-index]::before {
@@ -690,15 +708,17 @@ section {
     left: 24px;
     font-family: var(--font-mono);
     font-size: 10px;
-    color: rgba(255, 255, 255, 0.2);
+    color: var(--border);
     letter-spacing: 0.1em;
     z-index: 2;
 }
 
+/*about*/
 .about-content {
     display: flex;
     justify-content: space-between;
     margin: 0;
+    gap: 40px;
     align-items: center;
     justify-content: center;
 }
@@ -706,16 +726,18 @@ section {
 .about-lead {
     font-family: var(--font-headings);
     font-size: 28px;
-    font-weight: 300;
     line-height: 1.4;
     color: var(--text);
     margin-bottom: 24px;
 }
+
 .about-text {
+    flex: 1;
     display: flex;
     flex-direction: column;
     text-align: left;
 }
+
 .about-text p {
     color: var(--text-muted);
     margin-bottom: 16px;
@@ -724,13 +746,13 @@ section {
 }
 
 .about-text em {
-    font-family: var(--font-headings);
+    font-size: 18px;
     font-style: italic;
-    color: var(--cta);
+    color: var(--hover);
 }
 
 .about-btn {
-    margin: 20px 0 15px 0;
+    margin: 15px 0 15px 0;
     padding: 20px;
     justify-content: center;
     align-items: center;
@@ -738,21 +760,8 @@ section {
     gap: 48px;
 }
 
-.about-btn a {
-    display: flex;
-    padding: 10px 20px;
-    position: relative;
-    justify-content: center;
-    align-items: center;
-    background: var(--border);
-    color: var(--bg);
-    border-radius: 30px;
-    font-weight: 400;
-    transition: all 0.1s ease;
-    border: none;
-    cursor: pointer;
-}
 .tab-card {
+    flex: 1;
     background: transparent;
     border-radius: 16px;
     overflow: hidden;
@@ -769,7 +778,7 @@ section {
     padding: 18px 10px;
     background: none;
     border: none;
-    color: var(--border);
+    color: var(--cta);
     font-family: var(--font-headings);
     font-size: 0.82rem;
     letter-spacing: 0.12em;
@@ -785,13 +794,13 @@ section {
     left: 40%;
     width: 20%;
     height: 1px;
-    background: var(--cta);
+    background: var(--hover);
     transform: scaleX(0);
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .tab-btn.active {
-    color: var(--cta);
+    color: var(--hover);
 }
 
 .tab-btn.active::after {
@@ -799,7 +808,7 @@ section {
 }
 
 .tab-btn:hover:not(.active) {
-    color: var(--cta);
+    color: var(--hover);
 }
 
 .tab-panel {
@@ -840,14 +849,15 @@ section {
 .tab-panel span {
     color: var(--accent);
     font-size: 12px;
-    font-weight: 500;
+    font-weight: 400;
 }
+/*stats*/
 .stats-row {
-    margin: 40px;
+    margin: 30px 30px 0;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     border-top: 1px solid var(--border);
-    padding: 20px;
+    padding: 15px;
 }
 
 .stat {
@@ -887,6 +897,7 @@ section {
     margin-top: 8px;
 }
 
+/*contact*/
 .contact {
     text-align: center;
     justify-content: center;
@@ -901,12 +912,16 @@ section {
     justify-content: space-between;
     gap: 40px;
 }
-.contact-form {
-    width: 80%;
+
+.form-content {
+    flex: 1;
     align-items: center;
 }
+
 .contact form {
-    padding: 30px 20px;
+    box-shadow: 0 4px 6px #00fafa05;
+    border-radius: 15px;
+    padding: 30px 15px;
     display: flex;
     position: relative;
     align-items: center;
@@ -914,11 +929,9 @@ section {
     gap: 40px;
 }
 
-.form-inputs {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    width: 100%;
+.form-group {
+    width: 90%;
+    animation: fadeUp 0.8s 0.5s var(--ease) both;
 }
 
 .form-group input,
@@ -926,11 +939,15 @@ section {
     width: 100%;
     background: var(--border);
     padding: 14px;
-    border: 2.5px solid var(--accent);
+    border: none;
     border-radius: 8px;
     font-size: 15px;
     outline: none;
     transition: 0.3s;
+}
+
+.form-group textarea {
+    resize: none;
 }
 
 input::placeholder,
@@ -941,30 +958,141 @@ textarea::placeholder {
 
 .form-group input:focus,
 .form-group textarea:focus {
-    border: 2.5px solid var(--border);
     color: var(--bg);
-    font-weight: 600;
+    font-weight: 500;
+    background: var(--text);
+}
+
+input.invalid,
+textarea.invalid {
     background: var(--text-muted);
-    box-shadow: 0 0 20px 5px #008080;
-    transition: box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px var(--hover);
 }
 
-.contact button {
-    padding: 8px 14px;
-    border-radius: 25px;
-    font-size: 20px;
-    background: var(--accent);
-    color: var(--bg);
+.error-msg {
+    font-size: 12px;
+    color: var(--hover);
+    display: none;
+    margin-top: 5px;
+}
+.error-msg.visible {
+    display: block;
+}
+
+.form-footer {
+    padding-top: 0.5rem;
+    animation: fadeUp 0.7s 0.55s var(--ease-out-expo) both;
+}
+
+.submit-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--accent-dim);
+    color: var(--text-muted);
+    border-radius: 10px;
+    padding: 0.6rem 0.9rem;
+    border: none;
+    letter-spacing: 0.08em;
     cursor: pointer;
-    transition: 0.3s;
+    position: relative;
+    overflow: hidden;
+    transition:
+        background 0.25s ease,
+        transform 0.15s ease;
+}
+.submit-btn::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--hover);
+    transform: translateX(100%);
+    transition: transform 0.4s var(--ease);
+}
+.submit-btn:hover::before {
+    transform: translateX(0);
+}
+.submit-btn:hover {
+    transform: translateY(-1px);
+}
+.submit-btn:active {
+    transform: translateY(0);
+}
+.btn-text,
+.btn-arrow {
+    position: relative;
+    z-index: 1;
+}
+.btn-arrow {
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    transition: transform 0.3s ease;
+}
+.submit-btn:hover .btn-arrow {
+    transform: translateX(4px);
+}
+.btn-loader {
+	margin: 5px 20px;
+    display: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid;
+    border-top-color: var(--accent);
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+    position: relative;
+    z-index: 1;
+}
+.submit-btn.loading .btn-text,
+.submit-btn.loading .btn-arrow {
+    display: none;
+}
+.submit-btn.loading .btn-loader {
+    display: block;
+}
+.submit-btn.loading {
+    pointer-events: none;
 }
 
-.contact button:hover {
-    background: var(--cta);
-    transform: translateY(-2px);
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.toast {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    padding: 0.85rem 1.4rem;
+    font-size: 0.85rem;
+    font-weight: 400;
+    border-radius: 15px;
+    border: none;
+    background: var(--bg-2);
+    color: var(--text);
+    opacity: 0;
+    transform: translate(-50%, -50%);
+    transition:
+        opacity 0.4s ease,
+        transform 0.4s var(--ease);
+    pointer-events: none;
+    max-width: 200px;
+}
+.toast.show {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+}
+.toast.success {
+    background: var(--bg-2);
+}
+.toast.error {
+    background: var(--hover);
 }
 
 .contact-inner {
+    flex: 1;
     display: flex;
     flex-direction: column;
     font-family: var(--font-headings);
@@ -993,14 +1121,13 @@ textarea::placeholder {
 }
 .contact-detail p {
     display: flex;
+    margin: 4px;
+}
+.contact-detail a {
     font-size: 25px;
     font-family: var(--font-body);
-    color: var(--text-muted);
+    color: var(--text);
     letter-spacing: -0.02em;
-    transition:
-        border-color 0.4s,
-        color 0.4s;
-    padding-bottom: 4px;
 }
 .contact-detail p img {
     width: 25px;
@@ -1021,7 +1148,7 @@ textarea::placeholder {
     align-items: center;
     justify-content: space-between;
     flex-direction: column;
-    gap: 40px;
+    gap: 30px;
     padding: 10px;
 }
 
@@ -1049,6 +1176,17 @@ textarea::placeholder {
 
 .social-links a:hover img {
     animation: shake 1s linear infinite;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @keyframes shake {
@@ -1199,7 +1337,7 @@ REVEAL ANIMATIONS
 @media (max-width: 900px) {
     section,
     .hero {
-        padding: 30px 24px;
+        padding: 28px 24px;
         margin: 0;
         flex-wrap: wrap;
     }
