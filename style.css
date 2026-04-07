@@ -6,15 +6,15 @@
     padding: 0;
 }
 :root {
-    --bg: #121212;
-    --bg-2: #1c1c1c;
+    --bg: #1a1e24;
+    --bg-2: #1e1e1e;
     --text: #f8f8f8;
-    --text-muted: #b0b0b0;
-    --accent: #008080;
-    --accent-dim: #00fafa26;
-    --hover: #ffb873;
-    --cta: #00aaaa;
-    --border: #6a8f8f;
+    --text-muted: #c0d0c0;
+    --accent: #00d4b6;
+    --accent-dim: #0a6c6b;
+    --hover: #ff6f61;
+    --cta: #e68a2e;
+    --border: #2dd4bf;
     --font-display: "Syne", sans-serif;
     --font-headings: "Cormorant Garamond", serif;
     --font-body: "Roboto", sans-serif;
@@ -30,8 +30,8 @@ body {
     background: var(--bg);
     color: var(--text);
     font-family: var(--font-body);
-    font-size: 18px;
-    font-weight: 300;
+    font-size: 1.5rem;
+    font-weight: 500;
     line-height: 1.5;
     overflow-x: hidden;
 }
@@ -73,11 +73,11 @@ nav {
 
 .nav-links {
     display: flex;
-    gap: 48px;
+    gap: 4rem;
 }
 
 .nav-links a {
-    font-size: 20px;
+    font-size: 1.5rem;
     font-family: var(--font-headings);
     letter-spacing: 0.12em;
     text-transform: uppercase;
@@ -89,7 +89,7 @@ nav {
 .nav-links a::after {
     content: "";
     position: absolute;
-    bottom: -4px;
+    bottom: -0.25rem;
     left: 0;
     width: 0;
     height: 1px;
@@ -114,14 +114,14 @@ nav {
     display: flex;
     align-items: center;
     gap: 8px;
-    font-size: 15px;
+    font-size: 1rem;
     color: var(--text-muted);
     letter-spacing: 0.08em;
 }
 
 .status-dot {
-    width: 10px;
-    height: 10px;
+    width: 0.6rem;
+    height: 0.6rem;
     background: var(--accent);
     border-radius: 50%;
     animation: pulse 2.4s ease-in-out infinite;
@@ -262,10 +262,11 @@ nav {
     letter-spacing: 0.08em;
 }
 .hero {
-    min-height: auto;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
-    padding: 60px 35px 0px;
+    align-items: center;
+    padding: 60px 60px 0px;
     position: relative;
     overflow: hidden;
 }
@@ -275,13 +276,7 @@ nav {
     position: absolute;
     top: 20%;
     right: -10%;
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(
-        circle,
-        rgba(1, 128, 128, 0.08) 0%,
-        transparent 70%
-    );
+    background: radial-gradient(circle, #0a6c6b70 0%, transparent 70%);
     pointer-events: none;
 }
 
@@ -292,10 +287,11 @@ nav {
     min-height: auto;
     flex-wrap: wrap;
     justify-content: space-between;
-    gap: 5rem;
+    gap: 2rem;
 }
 .hero-words {
     margin: 0;
+    flex: 1;
     padding: 0;
     align-items: center;
     justify-content: center;
@@ -305,8 +301,8 @@ nav {
     align-items: center;
     font-family: var(--font-headings);
     gap: 5px;
-    padding: 10px;
-    font-size: 15px;
+    padding: 0.6rem;
+    font-size: 1rem;
     text-transform: uppercase;
     color: var(--border);
     margin-top: 20px;
@@ -316,7 +312,7 @@ nav {
 
 .hero-eyebrow .line {
     display: block;
-    width: 15px;
+    width: 1rem;
     height: 1px;
     background: var(--hover);
 }
@@ -324,31 +320,31 @@ nav {
 .hero-title {
     font-family: var(--font-headings);
     font-weight: 400;
-    font-size: 35px;
+    font-size: 2.5rem;
     line-height: 0.9;
     letter-spacing: -0.02em;
     display: flex;
     flex-direction: column;
-    margin: 20px 0px;
+    margin: 1.5rem 0;
 }
 .title-line {
     display: flex;
     opacity: 0;
     text-transform: capitalize;
-    transform: translateY(60px);
+    transform: translateY(4rem);
     animation: slideUp 1s var(--ease) forwards;
 }
 
 .title-line:nth-child(1) {
     animation-delay: 0.3s;
     color: var(--text);
-    font-size: 40px;
+    font-size: 2.5rem;
 }
 .title-line:nth-child(2) {
     animation-delay: 0.45s;
     color: var(--text-muted);
     font-weight: 1000;
-    font-size: 35px;
+    font-size: 3rem;
 }
 .title-line:nth-child(3) {
     animation-delay: 0.6s;
@@ -365,25 +361,24 @@ nav {
     justify-content: center;
     align-items: center;
     display: flex;
-    gap: 48px;
+    gap: 4rem;
 }
 
 .hero-btn a,
 .about-btn a {
     display: flex;
-    padding: 10px 20px;
+    padding: 0.8rem 1.5rem;
     text-transform: capitalize;
     position: relative;
     justify-content: center;
     align-items: center;
     background: linear-gradient(
         135deg,
-        #00fafa26 0%,
-        #008080 70%,
-        #ffb873 100%
+        var(--accent-dim) 0%,
+        var(--accent) 70%,
+        #e68a2e 100%
     );
-    border-radius: 30px;
-    font-weight: 400;
+    border-radius: 2.5rem;
     transition: all 0.1s ease;
     border: none;
     cursor: pointer;
@@ -391,7 +386,12 @@ nav {
 
 .hero-btn a:hover,
 .about-btn a:hover {
-    background: linear-gradient(135deg, #b87333 0%, #ffb873 70%, #f8f8f8 100%);
+    background: linear-gradient(
+        135deg,
+        #ff6f61 0%,
+        #e68a2e 70%,
+        var(--text-muted) 100%
+    );
 }
 
 .hero-image .img-box {
@@ -407,7 +407,10 @@ nav {
     justify-content: center;
 }
 .hero-image {
-    width: 550px;
+    flex: 1;
+    margin: 0 auto;
+    width: 20vw;
+    max-width: 100%;
     height: auto;
     overflow: hidden;
 }
@@ -420,7 +423,7 @@ nav {
 .hero-desc {
     max-width: 700px;
     color: var(--text-muted);
-    font-size: 28px;
+    font-size: 2.2rem;
     line-height: 1.5;
 }
 
@@ -455,7 +458,7 @@ nav {
     white-space: nowrap;
     animation: marqueeScroll 10s linear infinite;
     font-family: var(--font-headings);
-    font-size: 20px;
+    font-size: 1.5rem;
     font-style: italic;
     color: var(--text-muted);
 }
@@ -477,26 +480,27 @@ nav {
 section {
     position: relative;
     background:
-        radial-gradient(at 80% 20%, #121212 0px, transparent 80%),
-        radial-gradient(at 20% 40%, #00fafa05 0px, transparent 60%),
-        radial-gradient(at 60% 5%, #00fafa10 0px, transparent 40%);
+        radial-gradient(at 80% 20%, var(--bg) 0px, transparent 80%),
+        radial-gradient(at 20% 40%, var(--bg-2) 0px, transparent 60%),
+        radial-gradient(at 60% 5%, #00d4b630 0px, transparent 40%);
     justify-content: center;
     align-items: center;
-    padding: 120px 48px;
+    min-height: 100vh;
+    padding: 120px 60px;
     overflow: hidden;
 }
 
 .section-header {
     display: flex;
     align-items: baseline;
-    margin-bottom: 25px;
+    margin-bottom: 1.5rem;
     border-bottom: 1px solid var(--border);
     padding-bottom: 20px;
 }
 
 .section-title {
     font-family: var(--font-headings);
-    font-size: 40px;
+    font-size: 2.5rem;
     font-weight: 600;
     letter-spacing: -0.01em;
 }
@@ -513,14 +517,13 @@ section {
     margin-top: 20px;
     border-radius: 30px;
     z-index: 1;
-    background: var(--bg-2);
     padding: 3px;
     min-width: 200px;
     background: linear-gradient(
         135deg,
-        #1c1c1c 0%,
-        #00fafa10 50%,
-        #1c1c1c 100%
+        var(--bg-2) 0%,
+        #0a6c6b 50%,
+        var(--bg-2) 100%
     );
     position: relative;
     overflow: hidden;
@@ -535,10 +538,10 @@ section {
     background: conic-gradient(
         from 0deg,
         transparent 0%,
-        #ffb87370 40%,
-        #00808080 50%,
-        #ffb87370 60%,
-        #00808080 70%,
+        #e68a2e 40%,
+        var(--accent-dim) 50%,
+        #e68a2e 60%,
+        var(--accent-dim) 70%,
         transparent 100%
     );
     animation: rotate 2s linear infinite;
@@ -558,9 +561,9 @@ section {
 .project-card .card-content {
     background: linear-gradient(
         135deg,
-        #1c1c1c 0%,
-        #00fafa10 50%,
-        #1c1c1c 100%
+        var(--bg-2) 0%,
+        var(--accent-dim) 50%,
+        var(--bg-2) 100%
     );
     border-radius: 30px;
     position: relative;
@@ -571,7 +574,7 @@ section {
 }
 
 .project-card:hover {
-    box-shadow: 0 4px 6px #00fafa26;
+    box-shadow: 0 4px 6px var(--accent-dim);
 }
 
 .project-card:hover::before {
@@ -602,17 +605,22 @@ section {
     height: 200px;
     top: -50px;
     right: -50px;
-    background: radial-gradient(circle, #00fafa30 0%, transparent 50%);
+    background: radial-gradient(circle, var(--accent-dim) 0%, transparent 50%);
 }
 .shape-2 {
-    background: conic-gradient(from 180deg, #1c1c1c, transparent, #00fafa30);
+    background: conic-gradient(
+        from 180deg,
+        var(--bg-2),
+        transparent,
+        var(--accent-dim)
+    );
     width: 300px;
     height: 300px;
     bottom: -100px;
     left: -50px;
 }
 .shape-3 {
-    background: radial-gradient(ellipse, #00fafa30, transparent 60%);
+    background: radial-gradient(ellipse, var(--accent-dim), transparent 60%);
     width: 400px;
     height: 400px;
     top: 50%;
@@ -620,8 +628,8 @@ section {
     transform: translate(-50%, -50%);
 }
 .shape-4 {
-    background: linear-gradient(45deg, #00fafa30, transparent);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: linear-gradient(45deg, var(--accent-dim), transparent);
+    border: 1px solid #2dd4bf;
     width: 150px;
     height: 150px;
     bottom: 20px;
@@ -639,7 +647,7 @@ section {
 .project-desc {
     inset: 0;
     color: var(--text);
-    font-size: 13px;
+    font-size: 0.8rem;
     line-height: 1.7;
     margin-bottom: 24px;
     max-width: 480px;
@@ -663,7 +671,7 @@ section {
 }
 
 .project-tags span {
-    font-size: 10px;
+    font-size: 0.8rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--hover);
@@ -677,7 +685,7 @@ section {
 .project-title {
     font-family: var(--font-headings);
     color: var(--accent);
-    font-size: 28px;
+    font-size: 1.75rem;
     font-weight: 400;
     line-height: 1.2;
     margin-bottom: 12px;
@@ -689,7 +697,7 @@ section {
     align-items: center;
     z-index: 3;
     gap: 8px;
-    font-size: 15px;
+    font-size: 1rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--border);
@@ -740,15 +748,15 @@ section {
 
 .about-text p {
     color: var(--text-muted);
-    margin-bottom: 16px;
-    font-size: 13px;
-    line-height: 1.9;
+    margin-bottom: 12px;
+    font-size: 1.15rem;
+    line-height: 1.7;
 }
 
 .about-text em {
-    font-size: 18px;
+    font-size: 1.25rem;
     font-style: italic;
-    color: var(--hover);
+    color: var(--cta);
 }
 
 .about-btn {
@@ -778,9 +786,9 @@ section {
     padding: 18px 10px;
     background: none;
     border: none;
-    color: var(--cta);
+    color: var(--border);
     font-family: var(--font-headings);
-    font-size: 0.82rem;
+    font-size: 1rem;
     letter-spacing: 0.12em;
     text-transform: uppercase;
     cursor: pointer;
@@ -808,7 +816,7 @@ section {
 }
 
 .tab-btn:hover:not(.active) {
-    color: var(--hover);
+    color: var(--cta);
 }
 
 .tab-panel {
@@ -919,7 +927,7 @@ section {
 }
 
 .contact form {
-    box-shadow: 0 4px 6px #00fafa05;
+    box-shadow: 0 4px 6px var(--accent-dim);
     border-radius: 15px;
     padding: 30px 15px;
     display: flex;
@@ -1005,7 +1013,7 @@ textarea.invalid {
     content: "";
     position: absolute;
     inset: 0;
-    background: var(--hover);
+    background: var(--cta);
     transform: translateX(100%);
     transition: transform 0.4s var(--ease);
 }
@@ -1033,12 +1041,12 @@ textarea.invalid {
     transform: translateX(4px);
 }
 .btn-loader {
-	margin: 5px 20px;
+    margin: 5px 20px;
     display: none;
     width: 20px;
     height: 20px;
-    border: 2px solid;
-    border-top-color: var(--accent);
+    border: 2px solid var(--hover);
+    border-top-color: var(--border);
     border-radius: 50%;
     animation: spin 0.7s linear infinite;
     position: relative;
@@ -1359,6 +1367,7 @@ REVEAL ANIMATIONS
         border-right: none;
     }
     .contact-information,
+    .hero-content,
     .about-content {
         flex-direction: column;
     }
@@ -1368,5 +1377,15 @@ REVEAL ANIMATIONS
         gap: 12px;
         text-align: center;
         padding: 12px;
+    }
+}
+@media (prefers-color-scheme: light) {
+    :root {
+        --bg: #c0d0c0;
+        --bg-2: #f8f8f8;
+        --text-muted: #1e1e1e;
+        --accent: #0a6c6b;
+        --accent-dim: #00d4b6;
+        --text: #1e1e1e;
     }
 }
